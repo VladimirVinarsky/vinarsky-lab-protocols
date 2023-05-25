@@ -6,9 +6,15 @@ description: Transduction protocol for cardiomyocytes
 
 ## Preparation work
 
-1. Prepare PBS+ TRYPLE
+1. Prepare PBS + TRYPLE
 2. Prepare RPMI(+) + Polybrene
 3. Prepare particles&#x20;
+
+
+
+
+
+
 
 ## Material
 
