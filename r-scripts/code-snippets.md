@@ -5,6 +5,25 @@ description: >-
   code for R
 ---
 
+{% hint style="success" %}
+This is a sucess
+{% endhint %}
+
+
+{% hint style="warning" %}
+This is a warning
+{% endhint %}
+
+{% hint style="info" %}
+This is a sucess
+{% endhint %}
+
+
+
+{% hint style="danger" %}
+This is a danger
+{% endhint %}
+
 # Code snippets
 
 
