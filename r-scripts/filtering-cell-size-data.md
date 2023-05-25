@@ -6,11 +6,12 @@ description: Get the filtering scripts together
 
 ## Status
 
-Testing the Reproducible filtering
+### Testing the Reproducible filtering procedure described below&#x20;
 
-Mechanistically it works
+* works well, good job
+* Current attempt is in C:\Users\vld-cloud-01\Documents\MANUSCRIPT-YAP1\ANALYSES\CELL-SIZE\_AND\_ET-1\_TOGETHER\_2023-05-18\GRAPHS\WTvsKO-on-TCPS
 
-Current attempt is in C:\Users\vld-cloud-01\Documents\MANUSCRIPT-YAP1\ANALYSES\CELL-SIZE\_AND\_ET-1\_TOGETHER\_2023-05-18\GRAPHS\WTvsKO-on-TCPS
+### Making the violin plots
 
 copied there the files
 
@@ -19,13 +20,10 @@ copied there the files
 3. functions.R
 4. filtering-blocks-template.R
 
-Brought the dash to underscore process from filtering-blocks-tempate.R to the graph-settings.
-
-It is very cumebrsome to change the different grouping and measurment variables, but do not have capacity to change it
-
-Discovered the Exp2\_7 should not be there (removed manually)
-
-removed the CNTRL-KO2-TPCS because the cell sizes are off the charts
+* Brought the dash to underscore process from filtering-blocks-tempate.R to the graph-settings.
+* It is very cumebrsome to change the different grouping and measurment variables, but do not have capacity to change it
+* Discovered the Exp2\_7 should not be there (removed manually)
+* removed the CNTRL-KO2-TPCS because the cell sizes are off the charts
 
 ## How do I want to use it?
 
