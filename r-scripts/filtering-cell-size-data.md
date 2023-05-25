@@ -17,15 +17,23 @@ description: Get the filtering scripts together
 
 ## Reproducible filtering:
 
+### General Idea
+
+Filtering in R is difficult to see in the script. Therefore I want to generate a table/excel file which contains the conditions I used for the filetering of the final table which is used to make the graphs.
+
+To this end I use command line tool grep to filter for the terms I want and I do not want and then use manual interaction to fine-tune the filtering steps.
+
+### Structure
+
 I have three files:
 
-1. finalTable.csv which contains all the values from all the experiments
-2. list\_Conditions.csv which contains the table with all the conditions&#x20;
-3. results\_meanValues.csv which contains the table with all the mean values
+1. `finalTable.csv` which contains all the values from all the experiments
+2. `list_Conditions.csv` which contains the table with all the conditions&#x20;
+3. `results_meanValues.csv` which contains the table with all the mean values
 
 ### How to filter
 
-#### Step 1. grep on list\_Conditions.csv
+#### Step 1a. Search for term(s) in list\_Conditions.csv (OR)
 
 Use grep on `list_Conditions.csv` to narrow down the conditions and save it in a separate file
 
@@ -48,8 +56,22 @@ In case you string multiple files increase the number and put the underscores be
 
 This can be eventually parsed back into logic.
 
-{% code overflow="wrap" %}
+#### Step1b. Remove terms from \`list\_Conditions.csv\` (NOT)
+
 ```
+# to exclude term from filtering
+grep -iv ',H9WT' list_Conditions.csv > 01_not-H9WT_list_Conditions.csv
+```
+
+{% hint style="info" %}
+1. use of the `-v` flag gives you the lines where the pattern is not found
+2. the `Groups` pattern was removed in order to be included on the final file
+{% endhint %}
+
+#### Step1c Include both terms in search of  \`list\_Conditions.csv\` (AND)
+
+{% code overflow="wrap" %}
+```bash
 # to get experiments with H9WT or H9KO on TCPS
 grep -i 'Groups\|,H9WT\|,H9KO' list_Conditions.csv | grep -i 'Groups\|,TCPS'  > TCPS_H9WT-OR-H9KO_list_Conditions.csv
 ```
@@ -67,9 +89,12 @@ Save the file with prepended number, that way you know that it was manually modi
 
 #### Step3. filter the finalTable.csv using grep -f
 
-Use the final 03\_H9WT\_
+Use the final 03\_H9WT\_list\_Conditions.csv for filtering the big table which then goes into the scripts used to make graphs.
 
-1. use manual deletion of rows&#x20;
+```bash
+# filter the finalTable.csv using the file with conditions you selected
+grep -f 03_H9WT_list_Conditions.csv finalTable.csv > 03_H9WT_finalTable.csv
+```
 
 ## Example dataset for plotting
 
