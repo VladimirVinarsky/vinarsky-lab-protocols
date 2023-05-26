@@ -10,6 +10,10 @@ description: >-
 
 ## Resources
 
+{% embed url="https://dplyr.tidyverse.org/articles/programming.html" %}
+
+{% embed url="https://rlang.r-lib.org/reference/expr.html?q=!!!syms#ref-examples" %}
+
 ## Select and group\_by dynamic columns by \`syms()\` function
 
 How to use multiple columns defined in a character vector for grouping&#x20;
@@ -85,6 +89,25 @@ df %>%
                     )
             )
 
+```
+
+## Use the user-specified name of vriable in output
+
+```r
+my_summarise4 <- function(data, expr) {
+  data %>% summarise(
+    "mean_{{expr}}" := mean({{ expr }}),
+    "sum_{{expr}}" := sum({{ expr }}),
+    "n_{{expr}}" := n()
+  )
+}
+my_summarise5 <- function(data, mean_var, sd_var) {
+  data %>% 
+    summarise(
+      "mean_{{mean_var}}" := mean({{ mean_var }}), 
+      "sd_{{sd_var}}" := sd({{ sd_var }})
+    )
+}
 ```
 
 ##
