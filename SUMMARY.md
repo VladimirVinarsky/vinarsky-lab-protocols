@@ -2,6 +2,7 @@
 
 * [Panels with outlines](README.md)
 * [R scripts](r-scripts/README.md)
+  * [Data masking dplyr](r-scripts/data-masking-dplyr.md)
   * [Filtering cell-size data](r-scripts/filtering-cell-size-data.md)
   * [Violin Plots](r-scripts/violin-plots.md)
   * [Code snippets](r-scripts/code-snippets.md)
