@@ -10,6 +10,83 @@ description: >-
 
 ## Resources
 
+## Select and group\_by dynamic columns by \`syms()\` function
+
+How to use multiple columns defined in a character vector for grouping&#x20;
+
+```r
+library(dplyr)
+
+# Example data
+df <- data.frame(
+  group = c("A", "B", "A", "B"),
+  x = c(1, 2, 3, 4),
+  y = c(5, 6, 7, 8),
+  z = c(9, 10, 11, 12)
+)
+
+# Dynamic vector of columns
+columns <- c("group", "x", "y")  # Example: Can have any number of columns
+
+# Group by dynamic columns
+df %>%
+  group_by(!!!syms(columns))
+  
+# Select by dynamic columns
+df %>%
+ select(!!!syms(columns))
+```
+
+## Summarize single parameter across dynamic columns
+
+```r
+library(dplyr)
+
+# Example data
+df <- data.frame(
+  group = c("A", "B", "A", "B"),
+  x = c(1, 2, 3, 4),
+  y = c(5, 6, 7, 8),
+  z = c(9, 10, 11, 12)
+)
+
+# Dynamic vector of columns
+columns <- c("x", "y")  # Example: Can have any number of columns
+
+# Generate means of dynamic columns
+df %>%
+  summarize(across(all_of(columns), mean))
+  
+  
+  
+```
+
+```r
+library(dplyr)
+
+# Example data
+df <- data.frame(
+  group = c("A", "B", "A", "B"),
+  x = c(1, 2, 3, 4),
+  y = c(5, NA, 7, 8),
+  z = c(9, 10, 11, NA)
+)
+
+# Dynamic vector of columns
+columns <- c("x", "y")  # Example: Can have any number of columns
+
+# Generate means, standard deviations, and counts of dynamic columns
+df %>%
+  summarise(across(all_of(columns), 
+                    list(mean = mean, count = ~sum(!is.na(.))),
+                    .names = "{.col}_{.fn}"
+                    )
+            )
+
+```
+
+##
+
 ## Tidy evaluation - using single variable
 
 * When you want to reference a single variable inside tidyevaluation, double brace `{{ }}` it
