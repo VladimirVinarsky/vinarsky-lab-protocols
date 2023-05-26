@@ -61,6 +61,8 @@ df %>%
   
 ```
 
+## Summarize using multiple parameters
+
 ```r
 library(dplyr)
 
