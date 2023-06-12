@@ -37,6 +37,23 @@ df %>%
 a<-factor_this_shit(factor_column)
 ```
 
+## This works to change the order of levels
+
+```
+factor_column<-columns[2]
+factor_column_levels<-c("CC","AA","BB")
+
+factor_this_shit<-function(factor_column){
+df %>% 
+    # mutate(!!sym(factor_column):=factor(.data[[factor_column]],levels = c("CC","BB","AA")))
+    mutate(!!sym(factor_column):=factor(.data[[factor_column]],levels = factor_column_levels))
+  
+}
+
+a<-factor_this_shit(factor_column)
+
+```
+
 ## Select and group\_by dynamic columns by \`syms()\` function
 
 How to use multiple columns defined in a character vector for grouping&#x20;
