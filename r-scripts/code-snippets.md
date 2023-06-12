@@ -7,9 +7,7 @@ description: >-
 
 # Code snippets
 
-{% hint style="success" %}
-This is a sucess
-
+{% hint style="warning" %}
 but can also be anything else
 {% endhint %}
 

@@ -14,6 +14,29 @@ description: >-
 
 {% embed url="https://rlang.r-lib.org/reference/expr.html?q=!!!syms#ref-examples" %}
 
+## Something working for factors
+
+```
+# Example data
+df <- data.frame(
+  group = c("A", "B", "A", "B"),
+  group2= c("AA","AA","BB","CC"),
+  x = c(1, 2, 3, 4),
+  y = c(5, 6, 7, 8),
+  z = c(9, 10, 11, 12)
+)
+columns <- c("group", "group2", "x", "y")
+factor_column<-columns[2]
+
+factor_this_shit<-function(factor_column){
+df %>% 
+    mutate(!!sym(factor_column):=factor(.data[[factor_column]]))
+  
+}
+
+a<-factor_this_shit(factor_column)
+```
+
 ## Select and group\_by dynamic columns by \`syms()\` function
 
 How to use multiple columns defined in a character vector for grouping&#x20;
