@@ -16,3 +16,4 @@
 ***
 
 * [git shortcuts](git-shortcuts.md)
+* [linux hacks](linux-hacks.md)
