@@ -18,3 +18,5 @@
 * [git shortcuts](git-shortcuts.md)
 * [grep](grep.md)
 * [sed](sed.md)
+* [parameter expansion](parameter-expansion.md)
+* [setting neovim on windows](setting-neovim-on-windows.md)
