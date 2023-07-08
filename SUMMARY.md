@@ -16,4 +16,5 @@
 ***
 
 * [git shortcuts](git-shortcuts.md)
-* [linux hacks](linux-hacks.md)
+* [grep](grep.md)
+* [sed](sed.md)

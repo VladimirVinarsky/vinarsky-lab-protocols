@@ -1,8 +1,10 @@
-# linux hacks
+---
+description: grep usage
+---
 
-## grep
+# grep
 
-Find whether a file has a carriage return or not
+## Find whether a file has a carriage return or not
 
 {% code overflow="wrap" %}
 ```
@@ -16,4 +18,6 @@ if grep -qU $'\r' <file>; then echo "contains carriage return"; else echo "does 
 `-U` treat as a binary file (records carriage return)
 
 `$'\r'` the last character and then the carriage return
+
+
 
