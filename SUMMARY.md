@@ -20,3 +20,4 @@
 * [sed](sed.md)
 * [parameter expansion](parameter-expansion.md)
 * [setting neovim on windows](setting-neovim-on-windows.md)
+* [cut](cut.md)

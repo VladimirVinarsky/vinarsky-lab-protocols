@@ -4,6 +4,12 @@ description: useful sed commands
 
 # sed
 
+## Delete the lines containing string using sed
+
+```
+sed -i '/Baeldung/d' myfile.txt
+```
+
 ## Replace tabs with commas
 
 ```
