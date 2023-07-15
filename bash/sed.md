@@ -28,11 +28,10 @@ for file in <files>; do sed 's/\r//g' "${file}" > "${file%.sh}-fixed.sh"; done
 
 `s/` substitute
 
-`\r` carriage return
+&#x20;carriage return
 
 `//` by nothing
 
 `/g` globally
 
 `${file%.sh}` strip the `.sh`from the filename
-
