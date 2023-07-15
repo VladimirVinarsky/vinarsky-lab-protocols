@@ -396,13 +396,13 @@ However it is not enough for some of the other specific characters such as newli
 ### 7.1 Creating arrays and sparse arrays
 
 using the `(..)` syntax\
-names=("vlada" "zuzka" "cmiri beautiful bird")\
+names=("vlada" "jane" "agapornis beautiful bird")\
 _It is not necessary to quote the items of the array, however it uses a space as a separator so in case you have something with a space you definitely need to qoute it!_\\
 
 ### Definig indices directly
 
 The indices of the array can be directly specified:\
-names2=(\[0]="vlada" \[2]="zuzka" \[1]="cmiri beautiful bird")\
+names2=(\[0]="vlada" \[2]="jane" \[1]="agapornis beautiful bird")\
 The indeces do not have to be uninterrupted line of integers, there can be holes in the indeces, this is called sparse arrays.\
 `names[25]="little baby"`\\
 
@@ -442,7 +442,7 @@ Looks rather complicated to be the only right solution, but who knows.
 
 To understand the structure of the array use the `declare -p <variable>` command.\
 `declare -p names` see that here I do not need to prepend it with the dollar sign as in `echo`.\
-`$ declare -a names=([0]="vlada" [1]="zuzka" [2]="cmiri the beautiful bird")`\\
+`$ declare -a names=([0]="vlada" [1]="jane" [2]="agapornis the beautiful bird")`\\
 
 In case you want to have the print more nice and organized use the `printf` syntax.\
 `$ printf '%s\n' "${names[@]}"` where `%s` means the array item is a string followed by a newline. But it can be followed by pipe or whatever string character you choose.\
@@ -473,7 +473,7 @@ Getting the number of items in the array `echo ${#names[@]}`
 Very often it is not useful to expand the items, but to expand the indices.\
 For example when you have an array of first names and second names.\\
 
-`first=(vlada zuzka cmiri)`\
+`first=(vlada jane agapornis)`\
 `second=(vinarsky garlikova "beautiful bird")`\
 `echo "${first[1]} ${second[1]}"`\\
 
