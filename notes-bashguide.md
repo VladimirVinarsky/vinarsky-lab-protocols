@@ -474,7 +474,7 @@ Very often it is not useful to expand the items, but to expand the indices.\
 For example when you have an array of first names and second names.\\
 
 `first=(vlada jane agapornis)`\
-`second=(vinarsky garlikova "beautiful bird")`\
+`second=(vinarsky edelweiss "beautiful bird")`\
 `echo "${first[1]} ${second[1]}"`\\
 
 #### Indices expansion integrated in a for loop (1)
