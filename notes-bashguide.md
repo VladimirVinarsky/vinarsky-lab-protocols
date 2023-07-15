@@ -499,7 +499,7 @@ Of course for the associative arrays other variables can be used to expand the v
 
 Example:\
 `declare -A assocArray`\
-`assocArray=(["vladimir"]="muz" ["zuzanka"]="zena")`\
+`assocArray=(["vladimir"]="muz" ["jane"]="zena")`\
 `echo "when directly called by key 'vladimir': "${assocArray["vladimir"]}""`\
 `echo "when '\$USER' variable is used as a key: "${assocArray["$USER"]}""`\
 `echo "game over"`\\
