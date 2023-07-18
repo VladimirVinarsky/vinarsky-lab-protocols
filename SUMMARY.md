@@ -12,3 +12,7 @@
 ***
 
 * [notes bashguide](notes-bashguide.md)
+
+## Bioinfo
+
+* [Processing the ChIP-seq data](bioinfo/processing-the-chip-seq-data.md)
