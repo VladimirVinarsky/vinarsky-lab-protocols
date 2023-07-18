@@ -15,4 +15,5 @@
 
 ## Bioinfo
 
-* [Processing the ChIP-seq data](bioinfo/processing-the-chip-seq-data.md)
+* [Processing the ChIP-seq data](bioinfo/processing-the-chip-seq-data/README.md)
+  * [graphs to work on](bioinfo/processing-the-chip-seq-data/graphs-to-work-on.md)

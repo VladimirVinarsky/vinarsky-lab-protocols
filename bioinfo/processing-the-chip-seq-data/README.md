@@ -10,7 +10,7 @@ Giancarlo looks happy with the graph where there is an indication what is direct
 
 
 
-<figure><img src="../.gitbook/assets/RNA-seq_ChIP-seq_integrated-graph.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/RNA-seq_ChIP-seq_integrated-graph.png" alt=""><figcaption></figcaption></figure>
 
 
 
