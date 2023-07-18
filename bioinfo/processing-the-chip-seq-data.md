@@ -31,10 +31,72 @@ The idea is I could add the different categories (intron, exon, 3' UTR, 5' UTR, 
 
 ## Current code for the filtering
 
+
+
+```
+ # filter the data_ChIP-seq... by the filter
+ # maybe should use the script? may try this...
+ grep -if filt_Z-disc.txt data_ChIP-seq\ day\ 10.csv > chipseq_Z-disc.csv
+```
+
+
+
+#### Script to filter chipseq data: script\_filter\_chipseq.sh
+
+
+
+```bash
+#!/bin/bash
+
+if [[ $# -eq 0 ]]
+  then
+    echo "This script filters a csv file containing gene expression data (eg. rna-seq data) by one or more files containing sets of genes coming from gene ontology)"
+    echo "Usage: ${0} file-with-gene-names [another-file-with-gene-names]... RNASeq-table"
+    echo "file-with-gene-names contains one gene name/symbol per line"
+    echo "RNA-Seq-table contains the gene name/symbol column and fold change column"
+    exit 1
+fi
+
+# filter by the file
+filtered_file="${!#}"
+# make a directory for the filtered results
+filtered_results="filtered-results_${filtered_file}"
+timestamp="$(date +%H-%M-%S_%b-%d)"
+dir_name="${filtered_results}_${timestamp}"
+mkdir "${dir_name}"
+#exit 0
+
+
+# echo $filtered_file
+header="$(head -n 1 "${filtered_file}")"
+echo "${header}"
+# exit 0
+
+for filter in ${@:1:$#-1}
+  do
+    echo "Filtering by: ${filter}"
+    sed '/,/!s/^/,/' "${filter}" > filter_comma_at_start
+    sed 's/$/,/g' filter_comma_at_start > filter_with_commas
+    grep -if filter_with_commas "${filtered_file}" > "no-header_${filter}_${filtered_file}"
+    echo "${header}" > "${dir_name}/${filter}_${filtered_file}"
+    cat "no-header_${filter}_${filtered_file}" >> "${dir_name}/${filter}_${filtered_file}"
+    rm "no-header_${filter}_${filtered_file}"
+    rm filter_comma_at_start
+    rm filter_with_commas
+    echo "Filtering by ${filter} is done"
+done
+
+echo "Script is done"
+exit 0
+i
+```
+
 ```
 # transform a comma inside a chipseq file (usually where there is an intron)
 sed 's/, /: /g' data_ChIP-seq\ day\ 10.csv > data_ChIP-seq_d-10_fixed.csv 
 ```
+
+
 
 ```
 # get the genename from the filetered chipseq file
