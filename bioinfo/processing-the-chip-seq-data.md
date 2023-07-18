@@ -43,6 +43,8 @@ The idea is I could add the different categories (intron, exon, 3' UTR, 5' UTR, 
 
 #### Script to filter chipseq data: script\_filter\_chipseq.sh
 
+This script surrounds the gene name with commas to have a strict filtering, obviously can make it less strict, by dropping the first or second comma.
+
 
 
 ```bash
