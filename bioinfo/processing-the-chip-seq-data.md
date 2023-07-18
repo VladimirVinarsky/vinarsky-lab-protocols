@@ -2,12 +2,43 @@
 
 
 
+## Notes
+
+### Example graph
+
+Giancarlo looks happy with the graph where there is an indication what is directly regulated by YAP1 from the ChIPseq
+
+
+
+<figure><img src="../.gitbook/assets/RNA-seq_ChIP-seq_integrated-graph.png" alt=""><figcaption></figcaption></figure>
+
+
+
+### What next
+
+So I want to make the same graphs for the&#x20;
+
+1. sarcomere
+2. Z-disc
+3. Calcium and other channels
+4. Costamere
+
+I want to improve the way how I do the filtering, as it would make sense to join the information from the ChIPseq into the RNAseq datafile, so that I can then improve the plotting.
+
+### How to do it
+
+The idea is I could add the different categories (intron, exon, 3' UTR, 5' UTR, TSS) as columns with a value of matches therefore I can adjust the plotting script in R
+
+## Current code for the filtering
+
 ```
 # transform a comma inside a chipseq file (usually where there is an intron)
 sed 's/, /: /g' data_ChIP-seq\ day\ 10.csv > data_ChIP-seq_d-10_fixed.csv 
 ```
 
 
+
+## Future code
 
 ```
 # Aim: filter a fixed chipseq file by text file with names of genes
