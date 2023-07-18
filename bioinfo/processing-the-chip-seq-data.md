@@ -36,7 +36,10 @@ The idea is I could add the different categories (intron, exon, 3' UTR, 5' UTR, 
 sed 's/, /: /g' data_ChIP-seq\ day\ 10.csv > data_ChIP-seq_d-10_fixed.csv 
 ```
 
-
+```
+# get the genename from the filetered chipseq file
+cut -d, -f16 chipseq_Z-disc.csv |  uniq -c | sort -r
+```
 
 ## Future code
 
