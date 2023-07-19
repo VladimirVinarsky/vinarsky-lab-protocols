@@ -9,6 +9,7 @@
 * [cut](bash/cut.md)
 * [rename](bash/rename.md)
 * [join](bash/join.md)
+* [sort](bash/sort.md)
 
 ***
 
