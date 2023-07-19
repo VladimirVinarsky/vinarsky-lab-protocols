@@ -8,6 +8,7 @@
 * [parameter expansion](bash/parameter-expansion.md)
 * [cut](bash/cut.md)
 * [rename](bash/rename.md)
+* [join](bash/join.md)
 
 ***
 
