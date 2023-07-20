@@ -109,20 +109,32 @@ cut -d, -f16 chipseq_Z-disc.csv |  uniq -c | sort -r
 
 
 
+{% code overflow="wrap" %}
 ```
 
-# read the filtering terms from a file
+# read the filtering terms from a file - I have this
 ## ideally have a key value pairs separated by a space or colon
+intron, intergenic, exon, 5' UTR, 3' UTR, TTS promoter-TSS
 
 # filter given file with multiple terms and separate the matching data into a file 
 # with a specific name the terms are supposed to be in an array
 
-# cut out the column of the gene_symbol 
+#!/bin/bash
+annot=(intron intergenic exon "5' UTR" "3' UTR" TTS "promoter-TSS")
+filename=(intron intergenic, exon, "5-UTR" "3-UTR" TTS "promoter-TSS")
+timestamp="$(date +%H:%M:%S_%b-%d)"
+dir_name="chipseq-filtered_${timestamp}"
+mkdir "$dir_name"
+for i in "${annot[@]}";
+do grep -i "${i}" "${1}" > "${dir_name}/${i}"_"${1}";
+done
 
 # count the unique values to get the numbers of what is bound where
+for i in * ; do cut -d, -f16 "${i}"| uniq -c | sed -e 's/^ *//;s/ /,/' > "counts_${i}"; done
 
 # add the headers gene_symbol, count_intron
 # This I can fix 
+for i in count* ; do join -2 1 -1 2 -t, <(sort -t, -k 2 "${i}") <(sort -t, data_RNAseqTable.csv) > "appended_${i}"; done
 
 # join with the rna-seq data
 ## sort the rna-seq data by the gene-symbol name
@@ -135,6 +147,7 @@ cut -d, -f16 chipseq_Z-disc.csv |  uniq -c | sort -r
  
 
 ```
+{% endcode %}
 
 ## Future code
 

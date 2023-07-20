@@ -25,7 +25,15 @@ joins by the first column of file1 and third column of file2
 join -1 1 -2 3 -t , file1.csv file2.csv
 ```
 
-## &#x20;Specifying the output
+## &#x20;Do a left join
+
+```
+join -a 1 file1 file2
+```
+
+the `-a 1` flag means that even the umatched lines from the first file wil be joined
+
+## Specifying the output
 
 
 
