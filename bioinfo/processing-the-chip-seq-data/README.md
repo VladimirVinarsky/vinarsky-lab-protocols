@@ -105,6 +105,37 @@ sed 's/, /: /g' data_ChIP-seq\ day\ 10.csv > data_ChIP-seq_d-10_fixed.csv
 cut -d, -f16 chipseq_Z-disc.csv |  uniq -c | sort -r
 ```
 
+## Join the RNA-seq with chipseq data
+
+
+
+```
+
+# read the filtering terms from a file
+## ideally have a key value pairs separated by a space or colon
+
+# filter given file with multiple terms and separate the matching data into a file 
+# with a specific name the terms are supposed to be in an array
+
+# cut out the column of the gene_symbol 
+
+# count the unique values to get the numbers of what is bound where
+
+# add the headers gene_symbol, count_intron
+# This I can fix 
+
+# join with the rna-seq data
+## sort the rna-seq data by the gene-symbol name
+## sort the binding-counts files by gene-symbol
+
+# join in defined order these columns 
+
+# add the header for the file
+
+ 
+
+```
+
 ## Future code
 
 ```
