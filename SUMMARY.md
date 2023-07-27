@@ -10,6 +10,7 @@
 * [rename](bash/rename.md)
 * [join](bash/join.md)
 * [sort](bash/sort.md)
+* [panels - image magick](bash/panels-image-magick.md)
 
 ***
 
