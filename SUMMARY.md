@@ -12,6 +12,7 @@
 * [sort](bash/sort.md)
 * [panels - image magick](bash/panels-image-magick.md)
 * [mount network drive](bash/mount-network-drive.md)
+* [copy nested folder](bash/copy-nested-folder.md)
 
 ***
 
