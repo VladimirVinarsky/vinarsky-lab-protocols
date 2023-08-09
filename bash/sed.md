@@ -4,6 +4,14 @@ description: useful sed commands
 
 # sed
 
+## Put a slash at the end of a line
+
+
+
+```
+sed -e 's/$/\/g' file_no_slashes file_slashes
+```
+
 ## Delete the lines containing string using sed
 
 ```
