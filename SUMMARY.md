@@ -1,8 +1,12 @@
 # Table of contents
 
+* [SCRIPTS](README.md)
+  * [Check for file as argument](scripts/check-for-file-as-argument.md)
+  * [Make folder month-day-time](scripts/make-folder-month-day-time.md)
+
 ## BASH
 
-* [git shortcuts](README.md)
+* [git shortcuts](<README (1).md>)
 * [grep](bash/grep.md)
 * [sed](bash/sed.md)
 * [parameter expansion](bash/parameter-expansion.md)
