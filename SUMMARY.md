@@ -3,6 +3,7 @@
 * [SCRIPTS](README.md)
   * [Check for file as argument](scripts/check-for-file-as-argument.md)
   * [Make folder month-day-time](scripts/make-folder-month-day-time.md)
+  * [SPlit all ome.tiff images to channels](scripts/split-all-ome.tiff-images-to-channels.md)
 
 ## BASH
 
