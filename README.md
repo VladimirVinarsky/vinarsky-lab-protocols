@@ -1,2 +1,2 @@
-# SCRIPTS
+# Image Magick
 

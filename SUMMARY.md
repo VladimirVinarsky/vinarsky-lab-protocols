@@ -1,9 +1,12 @@
 # Table of contents
 
-* [SCRIPTS](README.md)
+* [Image Magick](README.md)
+* [SCRIPTS](<README (2).md>)
   * [Check for file as argument](scripts/check-for-file-as-argument.md)
   * [Make folder month-day-time](scripts/make-folder-month-day-time.md)
   * [SPlit all ome.tiff images to channels](scripts/split-all-ome.tiff-images-to-channels.md)
+  * [Adjust and convert tifs to jpgs](scripts/adjust-and-convert-tifs-to-jpgs.md)
+  * [Create panels in all folders](scripts/create-panels-in-all-folders.md)
 
 ## BASH
 

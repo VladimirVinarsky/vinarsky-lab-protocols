@@ -1,6 +1,11 @@
 # SPlit all ome.tiff images to channels
 
+This is code from chatGPT to split ome.tiff images to separate channels and call them `image_c1, image_c2 ...` and so  on.
+
+The downside of this script is that even if it does not do anything it still exits sucessfully
+
 ```python
+# run this in command line using python3
 import os
 import tifffile
 
