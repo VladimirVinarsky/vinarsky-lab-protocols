@@ -11,12 +11,14 @@
 
 ## BASH
 
+* [rename](bash/rename.md)
+* [sed](bash/sed.md)
+* [cp](bash/cp.md)
+* [tree](bash/tree.md)
 * [git shortcuts](<README (1).md>)
 * [grep](bash/grep.md)
-* [sed](bash/sed.md)
 * [parameter expansion](bash/parameter-expansion.md)
 * [cut](bash/cut.md)
-* [rename](bash/rename.md)
 * [join](bash/join.md)
 * [sort](bash/sort.md)
 * [panels - image magick](bash/panels-image-magick.md)
