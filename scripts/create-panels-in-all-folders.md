@@ -1,5 +1,15 @@
 # Create panels in all folders
 
+This is the oneliner which works
+
+{% code title="oneliner which works" overflow="wrap" %}
+```
+for folder in * ; do    cd "${folder}"; magick montage -label %f *.jpg -tile 3x3 -geometry 300x300+2+2 ../panel_"${folder}".jpg;  cd .. ; done
+```
+{% endcode %}
+
+This is the detailed description, but does not really work when copied into the shell as is
+
 ```
 for folder in * ; # the * takes everything in the current directory
 do 

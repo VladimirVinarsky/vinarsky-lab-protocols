@@ -7,6 +7,7 @@
   * [SPlit all ome.tiff images to channels](scripts/split-all-ome.tiff-images-to-channels.md)
   * [Adjust and convert tifs to jpgs](scripts/adjust-and-convert-tifs-to-jpgs.md)
   * [Create panels in all folders](scripts/create-panels-in-all-folders.md)
+  * [Copy folder structure, but not the files](scripts/copy-folder-structure-but-not-the-files.md)
 
 ## BASH
 
