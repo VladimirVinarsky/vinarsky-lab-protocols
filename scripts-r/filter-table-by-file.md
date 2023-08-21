@@ -29,8 +29,8 @@ setwd(working_directory$path)
 getwd()
 
 # load the files into strings, change to upper case and trim the whitespace from both ends
-data_filter<-str_trim( toupper( read_lines("read-and-filter-by-file/filter-1.txt" ) ) )
-data_source_strings<-str_trim( toupper( read_lines("read-and-filter-by-file/data-source.txt" ) ) )
+data_filter<-str_trim( toupper( read_lines("filter-1.txt" ) ) )
+data_source_strings<-str_trim( toupper( read_lines("data-source.txt" ) ) )
 
 
 # make a dummy tibble
@@ -38,7 +38,7 @@ data_source_numbers<-seq(1:length(data_source_strings))
 data_source<-tibble(data_source_numbers,data_source_strings)
 
 # Now I need to prepare the strings which contain the regular expressin understood by grep
-# define the start and endanchors
+# define the start and end anchors
 start_anchor<-"^"
 end_anchor<-"$"
 
@@ -70,7 +70,6 @@ match_start<-data_source %>%
 match_end<-data_source %>% 
   dplyr::filter(grepl(filter_anchored_end_collapsed,data_source_strings, ignore.case = TRUE))
 
-
 # Prepare for output to be able to extract the different matches
 matches<-list(exact = match_exact, 
               anywhere = match_anywhere, 
@@ -89,3 +88,5 @@ walk(names(matches_result), ~ {
 
 ```
 {% endcode %}
+
+##
