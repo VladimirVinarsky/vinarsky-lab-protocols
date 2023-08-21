@@ -2,9 +2,21 @@
 description: Filtering by file now possible in R
 ---
 
-# Table by file
+# Filter table by file
 
+## Files
 
+{% file src="../.gitbook/assets/data-source.txt" %}
+example file to be filtered
+{% endfile %}
+
+{% file src="../.gitbook/assets/filter-1.txt" %}
+example filter file
+{% endfile %}
+
+{% file src="../.gitbook/assets/read-and-filter.R" %}
+file with the actual code
+{% endfile %}
 
 {% code overflow="wrap" %}
 ```r
