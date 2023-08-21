@@ -4,6 +4,10 @@ description: Script to plot multiple files of DGE coming from Jupiter notebook
 
 # Plot the top 30 genes from jupiter notebook
 
+
+
+<figure><img src="../.gitbook/assets/filtered_myhs.jpg" alt=""><figcaption><p>example output</p></figcaption></figure>
+
 ## Example files
 
 {% file src="../.gitbook/assets/filtered_myhs.csv" %}
@@ -39,7 +43,7 @@ files<-list.files(dir_to_be_processed)
 # loop over the filenames
 for(file in seq_along(files)){
 
-# get the filename, strip extension and filt_ prefix, read the file in
+# get the filename, strip extension and prefix, read the file in to get a table
   file_name<-basename(files[file])
   file_name_short_01<-word(file_name, 1,sep = fixed("."))
   file_name_short<-str_remove(file_name_short_01,pattern = "filtered_")  
