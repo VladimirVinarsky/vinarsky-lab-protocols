@@ -1,5 +1,5 @@
 ---
-description: Filtering by file now possible in R
+description: Filtering of tables by file now possible in R
 ---
 
 # Filter table by file
@@ -17,6 +17,8 @@ example filter file
 {% file src="../.gitbook/assets/read-and-filter.R" %}
 file with the actual code
 {% endfile %}
+
+## Source code
 
 {% code overflow="wrap" %}
 ```r
