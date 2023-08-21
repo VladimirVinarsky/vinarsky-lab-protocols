@@ -1,19 +1,3 @@
----
-description: >-
-  Get rid of the automatically generated parts of filenames you do not need
-  using bash
----
-
-# Remove redundant parts of filenames
-
-{% file src="../.gitbook/assets/remove_long_names.sh" %}
-file with the script
-{% endfile %}
-
-## Code
-
-{% code overflow="wrap" fullWidth="true" %}
-```bash
 #!/bin/bash
 
 # This script helps to remove redundant (not unique) parts of filenames
@@ -116,6 +100,3 @@ echo ""
 echo "Script $0 is done"
 echo ""
 
-
-```
-{% endcode %}
