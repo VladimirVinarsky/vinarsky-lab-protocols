@@ -6,7 +6,17 @@ description: Script to plot multiple files of DGE coming from Jupiter notebook
 
 ## Example files
 
+{% file src="../.gitbook/assets/filtered_myhs.csv" %}
+subset of DGE file containing only myosine heavy chains&#x20;
+{% endfile %}
+
+{% file src="../.gitbook/assets/filtered_myls.csv" %}
+subsete of DGE file containing only myosine light chains
+{% endfile %}
+
 {% file src="../.gitbook/assets/final-script_barGraph_logFC_30most-dge (1).R" %}
+code of the script (less commented then below)
+{% endfile %}
 
 ## Actual code
 
@@ -32,7 +42,7 @@ for(file in seq_along(files)){
 # get the filename, strip extension and filt_ prefix, read the file in
   file_name<-basename(files[file])
   file_name_short_01<-word(file_name, 1,sep = fixed("."))
-  file_name_short<-str_remove(file_name_short_01,pattern = "filt_")  
+  file_name_short<-str_remove(file_name_short_01,pattern = "filtered_")  
   complete_table <- read_csv(paste0(dir_to_be_processed,"/",file_name))
 
 # filter the table to get the signifcant genes based on pAdj value and log2fc, select the 30 most differetially expressed, label the up-down regulated
