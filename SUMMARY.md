@@ -1,13 +1,15 @@
 # Table of contents
 
 * [Image Magick](README.md)
-* [Scripts-BASH](scripts-bash/README.md)
-  * [Check for file as argument](scripts-bash/check-for-file-as-argument.md)
-  * [Make folder month-day-time](scripts-bash/make-folder-month-day-time.md)
-  * [SPlit all ome.tiff images to channels](scripts-bash/split-all-ome.tiff-images-to-channels.md)
-  * [Adjust and convert tifs to jpgs](scripts-bash/adjust-and-convert-tifs-to-jpgs.md)
-  * [Create panels in all folders](scripts-bash/create-panels-in-all-folders.md)
-  * [Copy folder structure, but not the files](scripts-bash/copy-folder-structure-but-not-the-files.md)
+* [Scripts-R](scripts-r/README.md)
+  * [Table by file](scripts-r/table-by-file.md)
+* [Scripts-BASH](<README (2).md>)
+  * [Check for file as argument](scripts/check-for-file-as-argument.md)
+  * [Make folder month-day-time](scripts/make-folder-month-day-time.md)
+  * [SPlit all ome.tiff images to channels](scripts/split-all-ome.tiff-images-to-channels.md)
+  * [Adjust and convert tifs to jpgs](scripts/adjust-and-convert-tifs-to-jpgs.md)
+  * [Create panels in all folders](scripts/create-panels-in-all-folders.md)
+  * [Copy folder structure, but not the files](scripts/copy-folder-structure-but-not-the-files.md)
 
 ## BASH
 
