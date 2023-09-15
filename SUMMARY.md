@@ -14,6 +14,7 @@
   * [Remove redundant parts of filenames](scripts-bash/remove-redundant-parts-of-filenames.md)
 * [tooling-scripts](tooling-scripts/README.md)
   * [Remote desktop](tooling-scripts/remote-desktop.md)
+  * [Settings](tooling-scripts/settings.md)
 
 ## BASH
 
