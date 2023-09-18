@@ -13,7 +13,6 @@
   * [Copy folder structure, but not the files](scripts/copy-folder-structure-but-not-the-files.md)
   * [Remove redundant parts of filenames](scripts-bash/remove-redundant-parts-of-filenames.md)
 * [tooling-scripts](tooling-scripts/README.md)
-  * [Page](tooling-scripts/page.md)
   * [Virtual box (oracle)](tooling-scripts/virtual-box-oracle.md)
   * [Remote desktop](tooling-scripts/remote-desktop.md)
   * [Settings](tooling-scripts/settings.md)
