@@ -5,6 +5,7 @@
   * [Filter table by file](scripts-r/filter-table-by-file.md)
   * [Plot the top 30 genes from jupiter notebook](scripts-r/plot-the-top-30-genes-from-jupiter-notebook.md)
 * [Scripts-BASH](<README (2).md>)
+  * [Find files by date](scripts-bash/find-files-by-date.md)
   * [Check for file as argument](scripts/check-for-file-as-argument.md)
   * [Make folder month-day-time](scripts/make-folder-month-day-time.md)
   * [SPlit all ome.tiff images to channels](scripts/split-all-ome.tiff-images-to-channels.md)
