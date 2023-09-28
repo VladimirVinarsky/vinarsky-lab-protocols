@@ -2,11 +2,12 @@
 
 1. Takes images from chronologically (dd-mm-yyyy) labelled folders
 2. Groups them by CellLine ID (`#0001_rest-of-filename.tif`)
-3. CellLine ID is identified as 4digits at the beginning of the file separated by underscore from the rest of the file
-4. Saves them in `Reorganized` folder into CellLine ID folders (`CellLine_#0001`, `CellLine_#0002` ... ).
+3. Saves them in `Reorganized` folder into CellLine ID folders (`CellLine_#0001`, `CellLine_#0002` ... ).
 
 Works like a charm
 
+* CellLine ID is the `#0001-#9999` beginning of file
+* &#x20;`#` can be ommited
 * accepts unequal padding of CellLineID (`#001` is  `#0001`)
 * accepts both dd-mm-yyyy and dd-mm-yy
 * accepts names with a space inside `#003_this spaced name`
