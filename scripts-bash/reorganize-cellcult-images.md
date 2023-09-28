@@ -3,15 +3,15 @@
 ## Info
 
 1. Script takes images from chronologically (dd-mm-yyyy) named folders(`03-12-2023` ,`04-12-2023`... ) located in parent folder.
-2. Groups them by CellLine ID as beginning of the filename (filename: `#0001_rest-of-filename.tif` , CellLineID: `0001` )
+2. Groups them by CellLine ID as beginning of the filename (filename: `#0001_rest-of-filename.tif` , CellLine ID: `0001` )
 3. Saves them in `Reorganized` folder into "CellLine ID named" folders (`CellLine_#0001`, `CellLine_#0002` ... ).
 4. Renames files in "CellLine ID named" folders for better chronological sorting (`CellLine_#0001/2023-12-03_rest-of-filename.tif`) format for better sorting
 
 ## Notes
 
-* Works like a charm
+* CellLine ID must be separated from the rest of the file by underscore `_`&#x20;
 * &#x20;`#` in the CellLine ID can be ommited&#x20;
-* accepts unequal padding of CellLineID (`#1` is  equal to`#0001`)
+* accepts unequal padding of CellLine ID (`#1` is  equal to`#0001`)
 * accepts both dd-mm-yyyy and dd-mm-yy
 * accepts names with a space inside `#003_this spaced name`
 
@@ -51,12 +51,12 @@ echo "Usage: $0 <parent-folder>                  "
 echo "Supply path to <parent-folder> which contains multiple <sub-folders>."
 echo ""
 echo "Each <sub-folder> contains images taken in one day."
-echo "Example <sub-folder>: 11-10-2023."
+echo "Example <sub-folder>: 03-12-2023."
 echo ""
-echo "The image names start with CellLineId: #0001 - #9999 which is followed by details (objective,comment etc)."
+echo "The image names start with CellLine ID: #0001 - #9999 which is followed by details (objective,comment etc)."
 echo "Example image: #0003_sparse_good-morpholgy_10x.tif"
 echo ""
-echo "The script will bring together images of each CellLineId and sort them from newest to oldest"
+echo "The script will bring together images of each CellLine ID and sort them from newest to oldest"
 echo "Reorganized images will appear in 'Reorganized' folder"
 echo ""
 echo "++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
