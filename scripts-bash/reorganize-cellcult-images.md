@@ -1,10 +1,17 @@
 # Reorganize CellCult Images
 
-Takes chronological (dd-mm-yyyy) labelled folders, pulls out images, grouped by CellLine ID (#0001-#9999) and saves in Reorganized folder.
+1. Takes images from chronologically (dd-mm-yyyy) labelled folders
+2. Groups them by CellLine ID (`#0001_rest-of-filename.tif`)
+3. CellLine ID is identified as 4digits at the beginning of the file separated by underscore from the rest of the file
+4. Saves them in `Reorganized` folder into CellLine ID folders (`CellLine_#0001`, `CellLine_#0002` ... ).
 
 Works like a charm
 
-{% file src=".gitbook/assets/script.sh" %}
+* accepts unequal padding of CellLineID (`#001` is  `#0001`)
+* accepts both dd-mm-yyyy and dd-mm-yy
+* accepts names with a space inside `#003_this spaced name`
+
+{% file src="../.gitbook/assets/script.sh" %}
 script to download
 {% endfile %}
 
