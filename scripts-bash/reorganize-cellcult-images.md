@@ -2,10 +2,10 @@
 
 ## Info
 
-1. Takes images from chronologically (dd-mm-yyyy) named folders(`03-12-2023` ,`04-12-2023`... ).
+1. Takes images from chronologically (dd-mm-yyyy) named folders(`All-images/3-12-2023` ,`All-images/4-12-2023`... ) located in parent folder.
 2. Groups them by CellLine ID as beginning of the filename (filename: `#0001_rest-of-filename.tif` , CellLineID: `0001` )
-3. Saves them in `Reorganized` folder into CellLine ID named folders (`CellLine_#0001`, `CellLine_#0002` ... ).
-4. Renames files in CellLine ID named folders for better chronological sorting (`CellLine_#0001/2023-12-03_rest-of-filename.tif`) format for better sorting
+3. Saves them in `Reorganized` folder into "CellLine ID named" folders (`CellLine_#0001`, `CellLine_#0002` ... ).
+4. Renames files in "CellLine ID named" folders for better chronological sorting (`CellLine_#0001/2023-12-03_rest-of-filename.tif`) format for better sorting
 
 ## Notes
 
