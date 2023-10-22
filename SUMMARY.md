@@ -22,6 +22,7 @@
 
 ## BASH
 
+* [date](bash/date.md)
 * [rename](bash/rename.md)
 * [sed](bash/sed.md)
 * [cp](bash/cp.md)
