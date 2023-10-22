@@ -14,6 +14,7 @@
   * [Create panels in all folders](scripts/create-panels-in-all-folders.md)
   * [Copy folder structure, but not the files](scripts/copy-folder-structure-but-not-the-files.md)
   * [Remove redundant parts of filenames](scripts-bash/remove-redundant-parts-of-filenames.md)
+  * [Forward date](scripts-bash/forward-date.md)
   * [Parse date](scripts-bash/parse-date.md)
 * [tooling-scripts](tooling-scripts/README.md)
   * [Virtual box (oracle)](tooling-scripts/virtual-box-oracle.md)
