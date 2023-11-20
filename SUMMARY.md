@@ -1,6 +1,9 @@
 # Table of contents
 
-* [Image Magick](README.md)
+* [Image Analysis](README.md)
+  * [DIfferentiation efficiency](image-analysis/differentiation-efficiency.md)
+  * [Sarcomere Length](image-analysis/sarcomere-length.md)
+* [Image Magick](<README (3).md>)
 * [Scripts-R](scripts-r/README.md)
   * [Filter table by file](scripts-r/filter-table-by-file.md)
   * [Plot the top 30 genes from jupiter notebook](scripts-r/plot-the-top-30-genes-from-jupiter-notebook.md)
