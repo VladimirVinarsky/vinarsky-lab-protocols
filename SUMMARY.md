@@ -1,7 +1,7 @@
 # Table of contents
 
 * [Git Bash](README.md)
-  * [Add script "as a programme"](git-bash/add-script-as-a-programme.md)
+  * [Add a script "as a programme"](git-bash/add-a-script-as-a-programme.md)
   * [Page](git-bash/page.md)
 * [Image Analysis](<README (4).md>)
   * [DIfferentiation efficiency](image-analysis/differentiation-efficiency.md)
