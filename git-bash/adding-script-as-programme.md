@@ -10,7 +10,7 @@ Create the script in nano or notepad and save it (extension does not matter)
 
 The first line must be `#!/bin/bash` to make it executed by bash.&#x20;
 
-![](../.gitbook/assets/programme.png)
+<figure><img src="../.gitbook/assets/programme.png" alt=""><figcaption></figcaption></figure>
 
 ## Copy into \`/usr/bin/\` folder
 
