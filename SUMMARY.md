@@ -1,6 +1,8 @@
 # Table of contents
 
 * [Git Bash](README.md)
+  * [Adding script "as programme"](git-bash/adding-script-as-programme.md)
+  * [Page](git-bash/page.md)
 * [Image Analysis](<README (4).md>)
   * [DIfferentiation efficiency](image-analysis/differentiation-efficiency.md)
   * [Sarcomere Length](image-analysis/sarcomere-length.md)
