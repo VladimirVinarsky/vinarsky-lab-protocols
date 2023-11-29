@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Image Analysis](README.md)
+* [Git Bash](README.md)
+* [Image Analysis](<README (4).md>)
   * [DIfferentiation efficiency](image-analysis/differentiation-efficiency.md)
   * [Sarcomere Length](image-analysis/sarcomere-length.md)
 * [Image Magick](<README (3).md>)
