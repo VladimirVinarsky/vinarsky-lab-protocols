@@ -2,7 +2,7 @@
 
 * [Git Bash](README.md)
   * [Add a script "as a programme"](git-bash/add-a-script-as-a-programme.md)
-  * [Page](git-bash/page.md)
+  * [Use network drive](git-bash/use-network-drive.md)
 * [Image Analysis](<README (4).md>)
   * [DIfferentiation efficiency](image-analysis/differentiation-efficiency.md)
   * [Sarcomere Length](image-analysis/sarcomere-length.md)
