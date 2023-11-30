@@ -29,6 +29,7 @@
 
 ## BASH
 
+* [uniq](bash/uniq.md)
 * [date](bash/date.md)
 * [rename](bash/rename.md)
 * [sed](bash/sed.md)
