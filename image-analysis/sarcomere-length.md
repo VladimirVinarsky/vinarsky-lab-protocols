@@ -4,11 +4,15 @@
 
 {% file src="../.gitbook/assets/how-to-use-scripts.docx" %}
 
-{% file src="../.gitbook/assets/script_01_prepare-analysis" %}
+## Scripts to be copied in /usr/bin/ to be usable
 
-{% file src="../.gitbook/assets/script_02_copy-images" %}
+{% file src="../.gitbook/assets/analysis_prepare" %}
 
-{% file src="../.gitbook/assets/script_03_make-panels" %}
+{% file src="../.gitbook/assets/analysis_copy_images" %}
+
+{% file src="../.gitbook/assets/analysis_make_panels" %}
+
+{% file src="../.gitbook/assets/rmv_long" %}
 
 ## Processing of files in imageJ
 

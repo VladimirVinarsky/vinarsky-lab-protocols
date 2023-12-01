@@ -1,0 +1,44 @@
+#!/bin/bash
+# SCRIPT 1 copy image files and normalize them
+
+# set the expanded globbing
+shopt -s globstar
+shopt -s extglob
+
+usage () {
+echo "
+
+usage: ${0} folder [folder]...
+
+The script will go into all the folders and search for *.png and *.tiff images
+It will copy the images into and image_date folder in parent directory while keeping the image structure.
+That way the panels can be created inside of them.
+"
+exit 1
+}
+
+if ! [[ -d $1 ]]
+then 
+usage
+exit 1
+fi
+
+folder="$PWD"/images_"$(date +%b-%d_%Hh%Mm%Ss)" # creates the date 
+mkdir "${folder}" # appends the date and time to the folder name
+
+echo "${folder}"
+
+for experiment_folder in "$@"
+do
+cd "${experiment_folder}"
+echo "${experiment_folder}"
+# copy the image files preserving the folder structure
+
+mkdir "${folder}"/"${experiment_folder}"
+cp --parents **/*.png "${folder}"/"${experiment_folder}"
+cp --parents **/*.tiff "${folder}"/"${experiment_folder}"
+
+cd ..
+
+done
+echo files are copied in ${folder} directory
