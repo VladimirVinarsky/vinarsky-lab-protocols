@@ -1,0 +1,36 @@
+#!/bin/bash
+if [[ $# -eq 0 ]]
+then 
+echo " 
+usage: $0 folder [folder]
+
+1. Creates an output folder with date-time 
+2. Makes 3x3 panels from .tif images in each folder 
+3. The panels are in separated folders
+
+NOTE: do not include trailing slash after folder name.
+GOOD: folder
+BAD: folder/
+"
+
+exit 1
+else
+date_formatted=$(date +%b-%d_%Hh%Mm%Ss) # creates the date 
+mkdir output_"${date_formatted}" # appends the date and time to the folder name
+
+for folder in "${@}"
+do
+echo "$folder"
+mkdir output_"${date_formatted}"/"${folder}"
+cp "${folder}"/*.tif output_"${date_formatted}"/"${folder}"
+cd output_"${date_formatted}"/"${folder}"
+montage -label '%f' *.tif -tile 3x3 -geometry 758x758+2+2 "${folder/\//}".jpg # make the big panel
+rm *.tif
+echo "panel ${folder}.jpg is done"
+echo $PWD
+cd ..
+cd ..
+done
+
+echo "Script $0 is done"
+fi
