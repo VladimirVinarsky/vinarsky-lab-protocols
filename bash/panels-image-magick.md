@@ -6,6 +6,12 @@ make a 2x1 panel for sotaTool
 magick montage -label '%f' *.tif -tile 2x1 -geometry 480x480+2+2 panel.jpg
 ```
 
+make 3x3 panel from these sub-panels
+
+```
+magick montage panel* -tile 3x3 -geometry 720x360+2+2 big_panel.jpg
+```
+
 make a 3x panel of all tiff images both in small and big format
 
 ```
