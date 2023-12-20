@@ -1,5 +1,11 @@
 # panels - image magick
 
+make a 2x1 panel for sotaTool
+
+```
+magick montage -label '%f' *.tif -tile 2x1 -geometry 480x480+2+2 panel.jpg
+```
+
 make a 3x panel of all tiff images both in small and big format
 
 ```
