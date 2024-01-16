@@ -1,0 +1,124 @@
+#!/bin/bash
+
+# This script helps to remove redundant (not unique) parts of filenames
+# Written by Vladimir Vinarsky
+# 29-11-2023
+# Licence: GPL2 and higher
+
+
+## Initial help ##
+# when no arguments are supplied
+if [ $# -lt 1 ]
+	then
+	echo "
+# INFO # 
+The script "$0" removes the longest shared (redundant) part of filenames supplied to the script
+After finding the longest common sequence you can choose if you want to remove it or replace
+The script accepts globbing ('*' and such)
+
+# USAGE #
+$0 FILE1 FILE2...
+
+'<sequence>' is the longest shared sequence among the files 
+Do you want to delete/remove '<sequence>' from filenames? [y/n]:
+Type a sequence to replace ' <sequence> ' or press <Enter> to simply delete it: <new-sequence> 
+Do you want to proceed? [y/n]:
+Script $0 is done.
+"
+exit 0
+fi
+
+## Longest common string search ## 
+declare -a strings=("$@")
+
+# Get the name of the files in case the script goes into directories 
+for i in "${!strings[@]}"
+do 
+base_strings[i]=$(basename ${strings[i]})
+done
+
+# Get the first string to use as a reference
+reference="${base_strings[0]}"
+# Strip the extension from the reference to excluded it from the search 
+reference="${reference%.*}"
+
+# Initialize the longest sequence variable
+longest_sequence=""
+# Run the comparisons loop to get the longest share sequence
+for ((i=0; i<${#reference}; i++)); do
+    for ((j=i+1; j<=${#reference}; j++)); do
+        sequence="${reference:$i:$((j-i))}"
+
+        # Check if the sequence is shared among all strings
+        shared=true
+        for string in "${base_strings[@]:1}"; do
+            if [[ "$string" != *"$sequence"* ]]; then
+                shared=false
+                break
+            fi
+        done
+
+        # Update the longest sequence if applicable
+        if [ "$shared" = true ] && [ "${#sequence}" -gt "${#longest_sequence}" ]; then
+            longest_sequence="$sequence"
+        fi
+    done
+done
+
+# Check if the common string is non-zero length if it is zero-length exit 
+if ! [ -n "${longest_sequence}" ]
+	then
+	echo ""
+	echo "There is no shared sequence among the filenames"
+	echo ""
+	exit 0
+else         
+	echo "
+' ${longest_sequence} ' is the longest shared sequence
+If you delete the sequence, the files will look like this:
+		"
+		for file in "${base_strings[@]}"
+		do echo "${file}  =>  "${file/"${longest_sequence}"/}" "
+		done
+	echo "
+You can also replace the sequence with a new sequence
+"
+	read -p "Delete/replace the sequence from the filenames? (reversible) [y/n]: " remove
+	if [ $remove = "y" ]
+		then
+		read -p "Type a sequence to replace ' ${longest_sequence} ' or press <Enter> to simply delete it. (reversible): " replacement
+
+		echo "
+If you replace the sequence, the files will look like this:
+"
+		for file in "${base_strings[@]}"
+		do echo "${file} => "${file/"${longest_sequence}"/"${replacement}"}""
+		done
+		echo ""
+		read -p "Do you want to rename the files? (not reversible) [y/n]: " proceed
+		if [ $proceed = "y" ]
+		then
+			for file in "${strings[@]}"
+	  			do
+				mv "${file}" "${file/"${longest_sequence}"/"${replacement}"}"
+	  		done
+		else
+		echo "
+Not changing anything
+Script $0 is done
+"
+			exit 0
+        	fi
+	else 
+		echo ""	
+		echo "
+Not changing anything
+Script $0 is done
+"
+		exit 0
+	fi
+fi
+
+echo ""
+echo "Script $0 is done"
+echo ""

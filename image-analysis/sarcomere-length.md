@@ -1,3 +1,7 @@
+---
+description: How to process sarcomere length images in standardized way
+---
+
 # Sarcomere Length
 
 ## Overview of the Scripts
@@ -22,11 +26,21 @@ requires Experiment/Condition\_1..N/image\_folder\_1..N structure
 
 requires Experiment/image\_folder\_1..N structure
 
+#### `rmv_long file1 file2 [file..]`
+
+{% file src="../.gitbook/assets/rmv_long" %}
+Tool to remove redundant sequences in file names
+{% endfile %}
+
 #### Application to measure the distance of sarcomere peaks
 
 Application link: [https://vinarsky.shinyapps.io/sarcomere/](https://vinarsky.shinyapps.io/sarcomere/)
 
 ## Detailed description
+
+### 0. Remove redundant parts of the name
+
+Use the `rmv_long` script to remove the redundant parts of the names of `ome.tiff` files (such as Maximum Intensity Projection etc.) before you start the analysis
 
 ### 1. Create the analysis structure
 
@@ -152,16 +166,17 @@ Add the measured values into the `ALL-MEASUREMENTS-TOGETHER.csv` and fill in the
 
 
 
+## Documentation in word format
 
-
-{% file src="../.gitbook/assets/rmv_long" %}
-
-{% file src="../.gitbook/assets/analysis_make_nine_cell_panel" %}
-
-## Processing of files in imageJ
+#### Processing of files in imageJ
 
 {% file src="../.gitbook/assets/sarcomere-manual.docx" %}
 
+#### Using the application for counting Z-discs
 
+{% file src="../.gitbook/assets/sarcomere-app_manual.docx" %}
 
-##
+## Useful links
+
+[add-a-script-as-a-programme.md](../git-bash/add-a-script-as-a-programme.md "mention")
+
