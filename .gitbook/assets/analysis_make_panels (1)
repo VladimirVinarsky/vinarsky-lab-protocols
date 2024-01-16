@@ -1,0 +1,81 @@
+#!/bin/bash
+shopt -s globstar
+shopt -s extglob
+usage () {
+echo "
+
+usage: ${0} folder [folder]...
+
+This script is designed to make checking of properly selected sarcomeres easier.
+
+It will create a panel composed of the whole cell image (left) and 2x2 panel with measured sarcomeres.
+
+It is designed to be applied to following structure of experiment:
+
+Experiment (these are the names supplied as arguments)
+  Condition (folder inside of experiment)
+    FOlders of individual images (coming from analysis)
+
+ In case There is just one condition in the experiment and thus this layer is missing, put the experiment into another folder and apply the script to this.
+		
+ The resulting panels will be in a new folder called panels_<date-day> format.
+
+"
+exit 1
+}
+
+if ! [[ -d $1 ]]
+then
+usage
+exit 1                                                                                                                       
+fi     
+
+folder="${PWD}"/panels_"$(date +%b-%d_%Hh%Mm%Ss)" # creates the date                                                                  
+mkdir "${folder}" # appends the date and time to the folder name  
+
+for experiment in "$@"
+do
+echo "$experiment"
+experiment_name=$(basename "$experiment")
+cd "$experiment"
+echo $PWD
+#exit 1
+for condition in *
+do 
+echo "$condition"
+cd "$condition"
+rm *.tiff
+for image_folder in *
+do 
+echo "$image_folder"
+cd "$image_folder"
+echo $PWD
+#exit 1
+convert -normalize *.tiff normalized.jpg # normalize the tiff image and change to jpg
+ 
+montage -label '%f' *.png -tile 2x2 -geometry 256x256+1+1 small_panel.jpg
+# ls *+(.tiff|.png) # select ftiff and png files
+if [[ -f normalized-1.jpg ]]
+then
+echo "multi-layered tiff"
+montage normalized-1.jpg small_panel.jpg -tile 2x1 -geometry 1016x1016+2+2 big_panel.jpg # make the big panel
+else
+montage normalized.jpg small_panel.jpg -tile 2x1 -geometry 1016x1016+2+2 big_panel.jpg # make the big panel
+fi
+
+mv big_panel.jpg "${folder}"/"${experiment_name}"_"${condition}"_"${image_folder}"_image.jpg
+#exit 1
+echo panel creation loop done
+cd ..
+done
+echo condition loop done
+cd ..
+done
+echo experiment loop done
+cd ..
+done
+
+#cp -r **/*_image.jpg "${folder}"
+echo "script done"
+
+
