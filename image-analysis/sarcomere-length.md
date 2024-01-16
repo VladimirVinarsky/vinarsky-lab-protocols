@@ -1,14 +1,30 @@
 # Sarcomere Length
 
-## How to use scripts to create the analysis folders and files and then panels
+## Overview of the Scripts
 
-{% file src="../.gitbook/assets/how-to-use-scripts.docx" %}
+`analysis_prepare folder [folder...]`
 
-## Scripts to be copied in /usr/bin/ to be usable
+{% file src="../.gitbook/assets/analysis_prepare" %}
+Script to create the analysis structure for analyzing
+{% endfile %}
+
+* requires folders with ome-tiffs Experiment/image1..N.ome.tiff
+
+`analysis_make_panels folder [folder...]`
+
+* requires Experiment/Condition\_1..N/image\_folder\_1..N structure
+
+`analysis_make_cells_panels folder [folder...]`
+
+* requires Experiment/image\_folder\_1..N structure
+
+## Detailed description
 
 ### 1. Create the analysis structure
 
-First, the ome.tiff images exported from czi format need to be created so that it can be done more efficiently this is done using the `analysis_prepare` script applied to a folder (folders) which containg `ome.tiff` images we want to measure
+First, the ome.tiff images exported from czi format need to be created.
+
+Use the `analysis_prepare` script applied to a folder (folders) which containg `ome.tiff` images we want to measure
 
 The created analysis folder contains one `.csv` file for results of the measurements and one folder per each image containg following files:
 
@@ -17,10 +33,6 @@ The created analysis folder contains one `.csv` file for results of the measurem
 3. four `.png` with dummy files to be used to save the measurments
 
 The `.png` and `.csv` files are empty and serve to be used as a name for saving the screenshot of the region measured (`.png`) and the graph of intensity of the measurment (`.csv`)&#x20;
-
-{% file src="../.gitbook/assets/analysis_prepare" %}
-Script to create the analysis structure for analyzing
-{% endfile %}
 
 ### 2. Analysis in FiJi
 
