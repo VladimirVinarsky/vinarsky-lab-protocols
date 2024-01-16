@@ -6,6 +6,12 @@ description: How to process sarcomere length images in standardized way
 
 ## Overview of the Scripts
 
+#### `rmv_long file1 file2 [file..]`
+
+{% file src="../.gitbook/assets/rmv_long" %}
+Tool to remove redundant sequences in file names
+{% endfile %}
+
 #### `analysis_prepare folder [folder...]`
 
 {% file src="../.gitbook/assets/analysis_prepare" %}
@@ -25,12 +31,6 @@ requires Experiment/Condition\_1..N/image\_folder\_1..N structure
 {% file src="../.gitbook/assets/analysis_make_cells_panel" %}
 
 requires Experiment/image\_folder\_1..N structure
-
-#### `rmv_long file1 file2 [file..]`
-
-{% file src="../.gitbook/assets/rmv_long" %}
-Tool to remove redundant sequences in file names
-{% endfile %}
 
 #### Application to measure the distance of sarcomere peaks
 
@@ -179,4 +179,6 @@ Add the measured values into the `ALL-MEASUREMENTS-TOGETHER.csv` and fill in the
 ## Useful links
 
 [add-a-script-as-a-programme.md](../git-bash/add-a-script-as-a-programme.md "mention")
+
+{% embed url="https://vinarsky.shinyapps.io/sarcomere/" %}
 
