@@ -56,9 +56,17 @@ The created analysis folder contains one `.csv` file for results of the measurem
 
 The `.png` and `.csv` files are empty and serve to be used as a name for saving the screenshot of the region measured (`.png`) and the graph of intensity of the measurment (`.csv`)&#x20;
 
-### 2. Analysis in FiJi
+### 2. Analysis in FiJi and the App
 
-During the measurement in image J/FiJi it is recomendded just save the screenshots and csv files, and then count the number of the Z-discs using the online app.&#x20;
+During the measurement in image J/FiJi it is recomendded just save the screenshots and csv files, and then count the number of the Z-discs from the `.csv` files using the online app.&#x20;
+
+To gather only the `.csv` files to be analyzed by the app use the following line in the gitbash when you are in the `Experiment/image_folder_1..N` structure, go into the `Experiment` folder, start gitbash and paste following line.
+
+It will throw some errors, but will copy all the `.csv`files into the `Experiment/csvs-for-app` folder&#x20;
+
+```
+mkdir csvs-for-app; for folder in */; do cp ${folder}*.csv ./csvs-for-app/; done
+```
 
 The resulting `.csv` file with results is supposed to replace the original `.csv` file created by the script
 
