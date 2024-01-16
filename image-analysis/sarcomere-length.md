@@ -33,8 +33,9 @@ Once the analysis is done the selection of sarcomeres should be checked and veri
 &#x20;To do this we need to go through all the regions used for measurment and check them. Therefore the following scripts are used to make this more straightforward in following way:
 
 1. create panels of the whole image and the selections for checking and gather them in one folder
-2. Rescale the intenstiy of individual cell images to be easily visible
-3. Make panels out of these normalized images to give a quick overview of the images.
+2. Check the quality of sarcomere selection
+3. Rescale the intenstiy of individual cell images to be easily visible
+4. Make panels out of these normalized images to give a quick overview of the images.
 
 #### 1. Create panels of the regions of interest
 
@@ -72,8 +73,16 @@ Once this is done the script can be used
 The output of this folder is `panels_<date-time>` folder which contains the panels for checking
 
 {% file src="../.gitbook/assets/analysis_make_panels (1)" %}
-needs Experiment/condition/imag-folders structure
+Makes panels for checking
 {% endfile %}
+
+### 3. Check the quality of selection
+
+Open the results `.csv` file and the first panel of cell+regions of interest side by side in windows photo or somethng which enables drawing and go through the panels one by one. The ones which are not good are to be crossed out on the panel (and the modified image saved to replace the old panel) and the corresponding line in the results should be deleted.
+
+### 4&5 rescale intensity of normal images and make them into panels
+
+To generate an overview of the cells the last script is applied to the&#x20;
 
 {% file src="../.gitbook/assets/rmv_long" %}
 
