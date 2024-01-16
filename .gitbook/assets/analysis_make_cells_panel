@@ -1,0 +1,90 @@
+#!/bin/bash
+shopt -s globstar
+shopt -s extglob
+usage () {
+echo "
+
+usage: ${0} folder [folder]...
+
+This script is a part of creating results from the sarcomere length measurments analysis.
+It operates on this folder structure:
+
+Experiment (this is the folder supplied to the command line)
+  Image Folder Name (these are the folders with image, rois, and csv)
+
+It creates:
+1. new folder called cell-panels_<date-time> containing:
+  a. 3x3 panel of normalized images
+  b. individual normalized images
+
+"
+exit 1
+}
+
+if ! [[ -d $1 ]]
+then
+usage
+exit 1                                                                                                                       
+fi     
+
+folder="${PWD}"/cell-panels_"$(date +%b-%d_%Hh%Mm%Ss)" # creates the date                                                                  
+mkdir "${folder}" # appends the date and time to the folder name  
+
+for experiment in "$@"
+do
+echo "$experiment"
+experiment_name=$(basename "$experiment")
+mkdir "${folder}"/"${experiment_name}"
+cd "$experiment"
+echo $PWD
+#exit 1
+#for condition in *
+#do 
+#echo "$condition"
+#cd "$condition"
+for image_folder in */
+do 
+echo "$image_folder"
+cd "$image_folder"
+echo $PWD
+#exit 1
+for file in *.tiff
+do
+image_name="${file/.ome.tiff/}.jpg"
+convert -normalize "$file" "$image_name" # normalize the tiff image and change to jpg
+done
+
+second_layer="${image_name/.jpg/-1.jpg}" # in case there are two layers of the image, the second is used and has -1.jpg suffix
+first_layer="${image_name/.jpg/-0.jpg}" # in case there are two layers of the image, the second is used and has -1.jpg suffix
+if [[ -f "$second_layer" ]] # see if there is a second layer
+	then
+	echo "multi-layered tiff"
+	rm "$first_layer"
+	mv  "${second_layer}" "${folder}"/"${experiment_name}"/"${image_name}"
+fi
+
+mv  "${image_name}" "${folder}"/"${experiment_name}"/"${image_name}"
+
+#exit 1
+
+echo panel creation loop done
+cd ..
+done
+#echo condition loop done
+#cd ..
+#done
+
+echo experiment loop done
+cd ..
+done
+for experiment in "$@"
+do
+	experiment_name=$(basename "${experiment}")	
+cd "${folder}"/"${experiment_name}"
+
+montage -label '%f' *.jpg -tile 3x3 -geometry 758x758+2+2 "${experiment_name}".jpg # make the big panel
+cd ..
+done
+echo "script done"
+
+

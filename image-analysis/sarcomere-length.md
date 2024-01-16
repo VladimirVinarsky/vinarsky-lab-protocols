@@ -2,21 +2,29 @@
 
 ## Overview of the Scripts
 
-`analysis_prepare folder [folder...]`
+#### `analysis_prepare folder [folder...]`
 
 {% file src="../.gitbook/assets/analysis_prepare" %}
 Script to create the analysis structure for analyzing
 {% endfile %}
 
-* requires folders with ome-tiffs Experiment/image1..N.ome.tiff
+requires folders with ome-tiffs Experiment/image1..N.ome.tiff
 
-`analysis_make_panels folder [folder...]`
+#### `analysis_make_panels folder [folder...]`
 
-* requires Experiment/Condition\_1..N/image\_folder\_1..N structure
+{% file src="../.gitbook/assets/analysis_make_panels (1)" %}
 
-`analysis_make_cells_panels folder [folder...]`
+requires Experiment/Condition\_1..N/image\_folder\_1..N structure
 
-* requires Experiment/image\_folder\_1..N structure
+#### `analysis_make_cells_panels folder [folder...]`
+
+{% file src="../.gitbook/assets/analysis_make_cells_panel" %}
+
+requires Experiment/image\_folder\_1..N structure
+
+#### Application to measure the distance of sarcomere peaks
+
+Application link: [https://vinarsky.shinyapps.io/sarcomere/](https://vinarsky.shinyapps.io/sarcomere/)
 
 ## Detailed description
 
@@ -39,6 +47,8 @@ The `.png` and `.csv` files are empty and serve to be used as a name for saving 
 During the measurement in image J/FiJi it is recomendded just save the screenshots and csv files, and then count the number of the Z-discs using the online app.&#x20;
 
 The resulting `.csv` file with results is supposed to replace the original `.csv` file created by the script
+
+{% file src="../.gitbook/assets/sarcomere-app_manual.docx" %}
 
 ### 3. When the analysis is done - check it
 
@@ -154,8 +164,4 @@ Add the measured values into the `ALL-MEASUREMENTS-TOGETHER.csv` and fill in the
 
 
 
-## Application to measure the distance of sarcomere peaks
-
-Application link: [https://vinarsky.shinyapps.io/sarcomere/](https://vinarsky.shinyapps.io/sarcomere/)
-
-{% file src="../.gitbook/assets/sarcomere-app_manual.docx" %}
+##
