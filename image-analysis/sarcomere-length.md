@@ -158,15 +158,16 @@ The structure is as follows:
   * Exp01
     * Condition01
       * CELLS (normalized images of individual cells)
-        * ROIS (panels of regions of interest used for checking)
-        * multiple `.png` panels of normalized cells
+      * ROIS (panels of regions of interest used for checking)
+      * multiple `.png` panels of normalized cells
     * Condition02
       * CELLS (normalized images of individual cells)
-        * ROIS (panels of regions of interest used for checking)
-        * multiple `.png` panels of normalized cells
+      * ROIS (panels of regions of interest used for checking)
+      * multiple `.png` panels of normalized cells
     * multiple `exp_condition_results.csv` files of the checked measurements
     * `graphpad results`
     * `powerpoint results`
+  * `Exp02 ...`
 
 ### 5. Integrate with all measurments
 
