@@ -1,5 +1,5 @@
 ---
-description: Example how to filter a tibble by paramters defined in list
+description: Example how to filter a tibble by named parameters defined in list
 ---
 
 # Dplyr::filter
@@ -33,7 +33,7 @@ Make a list of named parameters
 ```r
 parameter<-list(matching_numbers = c(1,2,3,4),
                 number_range = c(2,4),
-                one_matching_number = 3,
+                one_number = 3,
                 letter = "b"
                 )
 ```
@@ -47,7 +47,7 @@ filtered_output<-test_data %>%
                         min(parameter[["number_range"]]),
                         max(parameter[["number_range"]]))
                 ) %>% 
-  dplyr::filter(numbers<parameter[["one_matching_number"]]) %>%  # keep smaller than upper limit number
+  dplyr::filter(numbers<parameter[["one_number"]]) %>%  # keep smaller than upper limit number
   dplyr::filter(letters==parameter[["letter"]]) # keep matching letter
 ```
 
