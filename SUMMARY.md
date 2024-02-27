@@ -8,6 +8,7 @@
   * [Sarcomere Length](image-analysis/sarcomere-length.md)
 * [Image Magick](<README (3).md>)
 * [Scripts-R](scripts-r/README.md)
+  * [Dplyr::filter](scripts-r/dplyr-filter.md)
   * [Filter table by file](scripts-r/filter-table-by-file.md)
   * [Plot the top 30 genes from jupiter notebook](scripts-r/plot-the-top-30-genes-from-jupiter-notebook.md)
 * [Scripts-BASH](<README (2).md>)
