@@ -1,0 +1,69 @@
+#!/bin/bash
+
+usage () {
+echo "
+
+usage: ${0} folder [folder]...
+
+The script will go into all the folders (one experiment one folder) and search for experimental condition subfolder with ome.tiff images
+
+The script will make a results_<experimental-condition>.csv file in each of experimental condition folder 
+
+For each of the ome.tiff images folder for analysis will be created containg:
+
+1. the ome.tiff image
+2. 4 csv files to save the line values
+3. 4 png files to save the regions of interest
+"
+exit 1
+}
+
+if ! [[ -d $1 ]]
+then
+usage 
+fi
+
+echo ${1}
+
+for parent_folder in  "$@" ; 
+do
+	cd "${parent_folder}"
+	
+	echo "${parent_folder}"
+	for folder in  */  ;
+		do
+		cd "$folder"
+echo "$folder"
+# For each file with .ome.tiff create a separate folder
+
+		for i in *.ome.tiff; do mkdir "${i/.ome.tiff/}"/ ; done
+
+
+# Copy each ome.tiff file into its folder:
+
+		for i in *.ome.tiff; do cp "${i}" ./"${i/.ome.tiff/}"/; done
+
+# Create 4 Values files to be replaced
+
+		for i in *.ome.tiff; do touch ./"${i/.ome.tiff/}"/Values_"${i/.ome.tiff/}_"{1..4}.csv; done
+
+# create 4 Region files for the prinscreens
+
+		for i in *.ome.tiff; do touch ./${i/.ome.tiff/}/Region_${i/.ome.tiff/}_{1..4}.png; done
+
+# Create a file for all the results with different rows for the results
+
+		echo "Sample,X_first-peak,X_last-peak,No-Of-Peaks,Distance,Spacing" > Z-Disc_"${folder/\//}"_results.csv
+
+		for i in *.ome.tiff; 
+			do 
+			for j in 1 2 3 4; 
+				do 
+				echo "${i/.ome.tiff/}_${j}" >> Z-Disc_"${folder/\//}"_results.csv
+				done
+			done
+			cd ..
+		done
+		cd ..
+done
+
