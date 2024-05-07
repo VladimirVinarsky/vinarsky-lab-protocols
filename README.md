@@ -4,7 +4,70 @@ description: command line tool to manipulate excel and csv files
 
 # csvkit
 
-## Getting example data&#x20;
+## Resources
+
+[link to tutorial page](https://csvkit.readthedocs.io/en/latest/tutorial.html)\
+[link to references and full manual for functions](https://csvkit.readthedocs.io/en/latest/cli.html)
+
+## Adjust csv data and insert into a text document
+
+### Insert a table
+
+Insert a table from "stacked.csv" into document in vim:\
+`.r ! csvlook stacked.csv`
+
+| group          | peakNo | min | max |
+| -------------- | ------ | --- | --- |
+| data1-test.csv | 1      | 2   | 20  |
+| data1-test.csv | 2      | 13  | 34  |
+| data2-test.csv | 1      | 3   | 205 |
+| data2-test.csv | 2      | 13  | 34  |
+| data2-test.csv | 3      | 13  | 34  |
+| data2-test.csv | 4      | 13  | 34  |
+| data3-test.csv | 2      | 13  | 34  |
+| data3-test.csv | 3      | 13  | 34  |
+| data3-test.csv | 4      | 13  | 34  |
+
+### Insert only selected columns of table
+
+To insert only "group" and "peakNo" columns.
+
+`.r ! csvcut -c group,peakNo | csvlook`
+
+| group          | peakNo |
+| -------------- | ------ |
+| data1-test.csv | 1      |
+| data1-test.csv | 2      |
+| data2-test.csv | 1      |
+| data2-test.csv | 2      |
+| data2-test.csv | 3      |
+| data2-test.csv | 4      |
+| data3-test.csv | 2      |
+| data3-test.csv | 3      |
+| data3-test.csv | 4      |
+
+### Insert table sorted by one or multiple columns
+
+To insert a table sorted by two columns (max and peakNo):\
+`.r ! csvsort -c max,peakNo stacked.csv | csvlook`
+
+| group          | peakNo | min | max |
+| -------------- | ------ | --- | --- |
+| data1-test.csv | 1      | 2   | 20  |
+| data1-test.csv | 2      | 13  | 34  |
+| data2-test.csv | 2      | 13  | 34  |
+| data3-test.csv | 2      | 13  | 34  |
+| data2-test.csv | 3      | 13  | 34  |
+| data3-test.csv | 3      | 13  | 34  |
+| data2-test.csv | 4      | 13  | 34  |
+| data3-test.csv | 4      | 13  | 34  |
+| data2-test.csv | 1      | 3   | 205 |
+
+\-r flag: revert the sorting to descending
+
+## Tutorial
+
+### Getting example data&#x20;
 
 ```
 // Some code 
@@ -13,7 +76,7 @@ cd csvkit_tutorial
 curl -L -O https://raw.githubusercontent.com/wireservice/csvkit/master/examples/realdata/ne_1033_data.xlsx
 ```
 
-## in2csv the excel killer
+### in2csv the excel killer
 
 _transform to csv and show in terminal_\
 `in2csv ne_1033_data.xlsx`
@@ -21,7 +84,7 @@ _transform to csv and show in terminal_\
 _transform to csv and save as data.csv_\
 `in2csv ne_1033_data.xlsx > data.csv`
 
-## csvlook: dataperiscope
+### csvlook: dataperiscope
 
 _to get the rough idea of the data use csvlook_\
 `csvlook data.csv`
@@ -29,12 +92,108 @@ _to get the rough idea of the data use csvlook_\
 _to get it paged, separated in columns and able to navigate through, use less_\
 `csvlook data.csv | less -S`
 
-## csvcut: datascalpel
+### csvcut: datascalpel
 
 _to select and reorder columns_
 
 to display the numbers and names of the columns use -n flag\*\
 `csvcut -n data.csv`
+
+### Insert table filtered by word in given column
+
+To select only rows containing "data2" use -m flag:\
+`.r ! csvgrep -c group -m data2 stacked.csv | csvlook`
+
+| group          | peakNo | min | max |
+| -------------- | ------ | --- | --- |
+| data2-test.csv | 1      | 3   | 205 |
+| data2-test.csv | 2      | 13  | 34  |
+| data2-test.csv | 3      | 13  | 34  |
+| data2-test.csv | 4      | 13  | 34  |
+
+\-i flag: to revert from select matching to return not matching
+
+### Insert table filtered by regular expression in given column
+
+To filter rows which in group column contain "ta2" or "ta3" use -r flag:\
+`.r ! csvgrep -c group -r "ta2|ta3" stacked.csv | csvlook`
+
+| group          | peakNo | min | max |
+| -------------- | ------ | --- | --- |
+| data2-test.csv | 1      | 3   | 205 |
+| data2-test.csv | 2      | 13  | 34  |
+| data2-test.csv | 3      | 13  | 34  |
+| data2-test.csv | 4      | 13  | 34  |
+| data3-test.csv | 2      | 13  | 34  |
+| data3-test.csv | 3      | 13  | 34  |
+| data3-test.csv | 4      | 13  | 34  |
+
+\-i flag: to revert from select matching to return not matching
+
+### Filter table rows by matching list contained in a file
+
+#### Cell in csv is matched exactly by line
+
+To filter by file "filter-file" which contains 2 lines: data3-test.csv and data1-test.csv.\\
+
+**Print the lines containing what is in the file**\\
+
+`.r ! csvgrep -c group -f filter-file stacked.csv | csvlook`
+
+| group          | peakNo | min | max |
+| -------------- | ------ | --- | --- |
+| data1-test.csv | 1      | 2   | 20  |
+| data1-test.csv | 2      | 13  | 34  |
+| data3-test.csv | 2      | 13  | 34  |
+| data3-test.csv | 3      | 13  | 34  |
+| data3-test.csv | 4      | 13  | 34  |
+
+**print lines not containing what is in the file**\
+`.r ! csvgrep -c group -if filter-file stacked.csv | csvlook`
+
+| group          | peakNo | min | max |
+| -------------- | ------ | --- | --- |
+| data2-test.csv | 1      | 3   | 205 |
+| data2-test.csv | 2      | 13  | 34  |
+| data2-test.csv | 3      | 13  | 34  |
+| data2-test.csv | 4      | 13  | 34  |
+
+#### Cell in csv contains string found in file
+
+To filter by file which contains two lines: data3 and data1\
+`.r ! cat stacked.csv | grep -Fvwf filter-file | csvlook`
+
+grep flags:\
+\-f: take from file\
+\-F: as fixed strings\
+\-W: only lines with whole words matches\
+\-v: select non matching lines (filtering)\\
+
+| group          | peakNo | min | max |
+| -------------- | ------ | --- | --- |
+| data2-test.csv | 1      | 3   | 205 |
+| data2-test.csv | 2      | 13  | 34  |
+| data2-test.csv | 3      | 13  | 34  |
+| data2-test.csv | 4      | 13  | 34  |
+
+### Stack first lines of csvs together - csvstack approach
+
+1. stack the csvs --filename flag creates a column with filenames\
+   `csvstack --filenames data*t.csv > stacked.csv`
+2. select the (number of peaks) you want to keep\
+   `csvgrep -c peakNo -r "^[1-2]$" stacked.csv > filtered.csv`
+
+Or this is an alternative\
+`csvgrep -c peakNo -r "^1|2$" stacked.csv > filtered.csv`
+
+3. Look at the data\
+   `csvlook filtered.csv`
+4. Do a summary statistics\
+   `csvstat filtered.csv`
+
+## Getting tables into markdown files
+
+
 
 ## Installation for gitbash
 
