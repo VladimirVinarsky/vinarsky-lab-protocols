@@ -15,7 +15,26 @@ curl -L -O https://raw.githubusercontent.com/wireservice/csvkit/master/examples/
 
 ## in2csv the excel killer
 
+_transform to csv and show in terminal_\
+`in2csv ne_1033_data.xlsx`
 
+_transform to csv and save as data.csv_\
+`in2csv ne_1033_data.xlsx > data.csv`
+
+## csvlook: dataperiscope
+
+_to get the rough idea of the data use csvlook_\
+`csvlook data.csv`
+
+_to get it paged, separated in columns and able to navigate through, use less_\
+`csvlook data.csv | less -S`
+
+## csvcut: datascalpel
+
+_to select and reorder columns_
+
+to display the numbers and names of the columns use -n flag\*\
+`csvcut -n data.csv`
 
 ## Installation for gitbash
 
