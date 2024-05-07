@@ -6,8 +6,7 @@ description: command line tool to manipulate excel and csv files
 
 ## Resources
 
-[link to tutorial page](https://csvkit.readthedocs.io/en/latest/tutorial.html)\
-[link to references and full manual for functions](https://csvkit.readthedocs.io/en/latest/cli.html)
+[link to tutorial page](https://csvkit.readthedocs.io/en/latest/index.html) and documentation really awesome, read this first
 
 ## Adjust csv data and insert into a text document
 
