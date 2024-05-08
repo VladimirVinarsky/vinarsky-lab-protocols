@@ -22,7 +22,7 @@ requires folders with ome-tiffs Experiment/image1..N.ome.tiff
 
 #### `analysis_make_panels folder [folder...]`
 
-{% file src="../.gitbook/assets/analysis_make_panels (1)" %}
+{% file src="../.gitbook/assets/analysis_make_panels (3)" %}
 
 requires Experiment/Condition\_1..N/image\_folder\_1..N structure
 
@@ -41,6 +41,8 @@ Application link: [https://vinarsky.shinyapps.io/sarcomere/](https://vinarsky.sh
 ### 0. Remove redundant parts of the name
 
 Use the `rmv_long` script to remove the redundant parts of the names of `ome.tiff` files (such as Maximum Intensity Projection etc.) before you start the analysis
+
+![Made with VHS](https://vhs.charm.sh/vhs-33RMq2OMw0BRS2qTeHZpNu.gif)
 
 ### 1. Create the analysis structure
 
