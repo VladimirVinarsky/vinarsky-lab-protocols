@@ -4,6 +4,12 @@ description: useful sed commands
 
 # sed
 
+## Convert windows scripts to linux
+
+```
+sed -i -e 's/\r$//' <windows-ending-scripts>
+```
+
 ## Put a slash at the end of a line
 
 
