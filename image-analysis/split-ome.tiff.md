@@ -6,7 +6,12 @@ description: >-
 
 # Split ome.tiff
 
-`python3 split-ome-tiff <input-folder> <output-folder>`
+`python3 split <input-folder> <output-folder>`
+
+Notes:
+
+1. You have to have the code below saved as a file `split`&#x20;
+2. Have it executable by typing `chmod a+x split`
 
 ```
 # run this in command line using python3 
