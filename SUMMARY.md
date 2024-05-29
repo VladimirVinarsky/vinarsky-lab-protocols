@@ -5,6 +5,7 @@
   * [Add a script "as a programme"](git-bash/add-a-script-as-a-programme.md)
   * [Use network drive](git-bash/use-network-drive.md)
 * [Image Analysis](<README (4).md>)
+  * [Split ome.tiff](image-analysis/split-ome.tiff.md)
   * [DIfferentiation efficiency](image-analysis/differentiation-efficiency.md)
   * [Sarcomere Length](image-analysis/sarcomere-length.md)
 * [Image Magick](<README (3).md>)
