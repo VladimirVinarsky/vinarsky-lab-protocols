@@ -8,6 +8,26 @@ description: command line tool to manipulate excel and csv files
 
 [link to tutorial page](https://csvkit.readthedocs.io/en/latest/index.html) and documentation really awesome, read this first
 
+
+
+## Installation for gitbash
+
+```
+pip install csvkit
+```
+
+This run without problems but installed in a different path
+
+So I just copied the files into `/usr/bin/`
+
+The scripts got installed here:
+
+```
+C:\Users\vld\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\Scripts
+```
+
+To get to the hidden AppData folder pres `WindowButton + R` and then type `%AppData%`
+
 ## Adjust csv data and insert into a text document
 
 ### Insert a table
