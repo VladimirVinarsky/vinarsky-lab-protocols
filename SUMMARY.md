@@ -9,6 +9,15 @@
   * [DIfferentiation efficiency](image-analysis/differentiation-efficiency.md)
   * [Sarcomere Length](image-analysis/sarcomere-length.md)
 * [Image Magick](<README (3).md>)
+
+## Bioinfo
+
+* [gene-expression-chipseq](bioinfo/gene-expression-chipseq.md)
+* [Processing the ChIP-seq data](bioinfo/processing-the-chip-seq-data/README.md)
+  * [graphs to work on](bioinfo/processing-the-chip-seq-data/graphs-to-work-on.md)
+
+***
+
 * [Scripts-R](scripts-r/README.md)
   * [Dplyr::filter](scripts-r/dplyr-filter.md)
   * [Filter table by file](scripts-r/filter-table-by-file.md)
@@ -53,9 +62,3 @@
 ***
 
 * [notes bashguide](notes-bashguide.md)
-
-## Bioinfo
-
-* [gene-expression-chipseq](bioinfo/gene-expression-chipseq.md)
-* [Processing the ChIP-seq data](bioinfo/processing-the-chip-seq-data/README.md)
-  * [graphs to work on](bioinfo/processing-the-chip-seq-data/graphs-to-work-on.md)
