@@ -11,14 +11,20 @@ description: How the graphs for the paper are done
 3. Counting number of genes in chipseq tables
 4. Processing the chipseq data
 
-## Data files
+## Data files description
 
 1. `DGE_source-table.xlsx` place where I did the filtering to get the significant genes keeps all data in excel
-2. `DGE_all.csv` Table of differential gene expression both significant and non significant
+2. `DGE_all.csv` Table of differential gene expression both significant and non significant&#x20;
 3. `DGE_significant.csv` Table of only significant genes coming from `DGE_all.xlsx`
 4. `DGE_gene-symbols_all.csv` just the gene symbols of the the `DGE.csv`
 5. `DGE_gene-symbols_significant.csv` just the gene symbols of the the `DGE_significant.csv`
 6. `data_ChIP-seq_day-10_fixed.csv` The chipseq table containing all the hits
+
+## Data files links
+
+
+
+{% file src="../.gitbook/assets/DGE_source-table.xlsx" %}
 
 ## Script files
 
