@@ -22,9 +22,11 @@ description: How the graphs for the paper are done
 
 ## Data files links
 
-
+{% file src="../.gitbook/assets/DGE_all.csv" %}
 
 {% file src="../.gitbook/assets/DGE_source-table.xlsx" %}
+
+{% file src="../.gitbook/assets/data_ChIP-seq_day-10_fixed.csv" %}
 
 ## Script files
 
