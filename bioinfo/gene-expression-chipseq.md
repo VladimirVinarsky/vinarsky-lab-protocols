@@ -77,6 +77,8 @@ description: How the graphs for the paper are done
 
 * Splits the reformatted chipseq table by the different binding locations and outputs the list of genes into csv files
 
+{% file src="../.gitbook/assets/DGE_read-and-filter_exact-only.R" %}
+
 ## Specifications
 
 ### Filter files
