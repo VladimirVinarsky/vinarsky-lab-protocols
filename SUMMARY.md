@@ -56,5 +56,6 @@
 
 ## Bioinfo
 
+* [gene-expression-chipseq](bioinfo/gene-expression-chipseq.md)
 * [Processing the ChIP-seq data](bioinfo/processing-the-chip-seq-data/README.md)
   * [graphs to work on](bioinfo/processing-the-chip-seq-data/graphs-to-work-on.md)
