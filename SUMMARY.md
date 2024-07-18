@@ -1,6 +1,7 @@
 # Table of contents
 
-* [csvkit](README.md)
+* [Apps-for-video](README.md)
+* [csvkit](<README (6).md>)
 * [Git Bash](<README (5).md>)
   * [Add a script "as a programme"](git-bash/add-a-script-as-a-programme.md)
   * [Use network drive](git-bash/use-network-drive.md)
@@ -23,6 +24,7 @@
   * [Filter table by file](scripts-r/filter-table-by-file.md)
   * [Plot the top 30 genes from jupiter notebook](scripts-r/plot-the-top-30-genes-from-jupiter-notebook.md)
 * [Scripts-BASH](<README (2).md>)
+  * [Download multiple files](scripts-bash/download-multiple-files.md)
   * [Move files ending with number](scripts-bash/move-files-ending-with-number.md)
   * [Reorganize daily images](scripts-bash/reorganize-cellcult-images.md)
   * [Find files by date](scripts-bash/find-files-by-date.md)
