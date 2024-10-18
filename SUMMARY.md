@@ -22,7 +22,7 @@
 * [Scripts-R](scripts-r/README.md)
   * [Plot the top 30 genes from jupiter notebook](scripts-r/plot-the-top-30-genes-from-jupiter-notebook.md)
   * [Dplyr::filter](scripts-r/dplyr-filter.md)
-  * [Select cols](scripts-r/select-cols.md)
+  * [Select.R](scripts-r/select.r.md)
   * [Summary.R](scripts-r/summary.r.md)
 * [Filter table by file](filter-table-by-file.md)
 * [Scripts-BASH](<README (2).md>)
