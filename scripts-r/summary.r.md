@@ -1,4 +1,12 @@
+---
+description: >-
+  To create summary of csv file grouped by selected columns using `Rscript.exe`
+  from command-line
+---
+
 # Summary.R
+
+{% file src="../.gitbook/assets/summary.R" %}
 
 ### Usage
 
