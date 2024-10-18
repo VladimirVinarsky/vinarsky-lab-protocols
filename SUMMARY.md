@@ -20,10 +20,10 @@
 ***
 
 * [Scripts-R](scripts-r/README.md)
+  * [Summary.R](scripts-r/summary.r.md)
+  * [Select.R](scripts-r/select-cols.md)
   * [Plot the top 30 genes from jupiter notebook](scripts-r/plot-the-top-30-genes-from-jupiter-notebook.md)
   * [Dplyr::filter](scripts-r/dplyr-filter.md)
-  * [Select.R](scripts-r/select.r.md)
-  * [Summary.R](scripts-r/summary.r.md)
 * [Filter table by file](filter-table-by-file.md)
 * [Scripts-BASH](<README (2).md>)
   * [Download multiple files](scripts-bash/download-multiple-files.md)

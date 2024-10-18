@@ -2,7 +2,7 @@
 description: Select columns from a command line using an R script
 ---
 
-# Select cols
+# Select.R
 
 {% file src="../.gitbook/assets/select.R" %}
 
