@@ -18,7 +18,7 @@ Create example files with different beginnings for copyiing
 Example 1: Copy the files with the same ending number into folders with such a number&#x20;
 
 ```
-for file in *; do install -D "$file" "${file -6:2}/${file}"; done
+for file in *; do install -D "$file" "${file: -6:2}/${file}"; done
 ```
 
 Explanation:&#x20;
