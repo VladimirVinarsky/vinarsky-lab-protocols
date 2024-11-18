@@ -4,17 +4,15 @@ description: How to move files ending with a number into folders ending with num
 
 # Move files ending with number
 
-Create folders ending with numbers (1 to 10 here)
+Create 36 files which have three different starts and 12 different ends followed by an extension
 
 ```
-mkdir folder_name_{01..10}
+touch {first,second,third}_{01..12}.tif
 ```
 
 Create example files with different beginnings for copyiing
 
 ```
-touch abc_here_{01..10}.tif
-touch def_there_{01..10}.tif
 ```
 
 Copy the files into the folders&#x20;
