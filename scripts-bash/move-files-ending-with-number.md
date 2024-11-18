@@ -15,14 +15,14 @@ Create example files with different beginnings for copyiing
 ```
 ```
 
-Copy the files into the folders&#x20;
+Example 1: Copy the files with the same ending number into folders with such a number&#x20;
 
 ```
-for file in *{01..10}.tif; do cp "$file" *"${file: -6:2}"/; done
+for file in *; do install -D "$file" "${file -6:2}/${file}"; done
 ```
 
 Explanation:&#x20;
 
 1. `{01...10}` generates sequence of numbers
 2. `${string:offset:length}` with a caveat, negative offset needs to be separated by space from the colon
-3.
+3. install -D is like a copy (cp) command, but enables you to create the folder at the same time (and also the permissions and ownerships)
