@@ -27,7 +27,7 @@
 * [Filter table by file](filter-table-by-file.md)
 * [Scripts-BASH](<README (2).md>)
   * [Download multiple files](scripts-bash/download-multiple-files.md)
-  * [Move files ending with number](scripts-bash/move-files-ending-with-number.md)
+  * [Move files into folders based on patterns](scripts-bash/move-files-into-folders-based-on-patterns.md)
   * [Reorganize daily images](scripts-bash/reorganize-cellcult-images.md)
   * [Find files by date](scripts-bash/find-files-by-date.md)
   * [Check for file as argument](scripts/check-for-file-as-argument.md)
